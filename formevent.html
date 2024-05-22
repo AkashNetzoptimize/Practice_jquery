@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>keyboard events</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      #test_box {
+        border: 1px solid royalblue;
+        margin-top: 20px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Form Events</h1>
+
+    <form action="" id="sform">
+      <label for="">Name</label>
+      <input type="text" name="name" id="sname" /><br /><br />
+
+      <label for="">Class</label>
+      <input type="text" name="sclass" id="sclass" /><br /><br />
+
+      <label for="">Country</label>
+      <select id="scountry">
+        <option value="india">India</option>
+        <option value="russia">russia</option>
+        <option value="japan">Japan</option></select
+      ><br /><br />
+      <input id="submit" type="submit" name="submit" value="submit" />
+    </form>
+
+    <div id="test_box"><!-- empty div --></div>
+
+    <!-- here i stated jquery code  -->
+    <script>
+      $(document).ready(function () {
+        //this is for focus ()
+        $("#sname,#sclass,#scountry").focus(function(){
+          $(this).css("background-color", "cyan");
+        });
+
+        //this is for blur()
+        $("#sname,#sclass,#scountry").blur(function(){
+          $(this).css("background-color", "lime");
+        });
+
+        //this is for change()
+        $("#scountry").change(function(){
+        //   $(this).css("background-color", "yellow");
+          var a = $(this).val();
+          $("#test_box").html(a);
+        });
+
+        //this is for select()
+        $("#sname,#sclass").select(function(){
+         $(this).css("background-color", "red");
+        });
+
+        //this is for submit()
+        $("#sform").submit(function () {
+      alser("Form Submited");
+        });
+      });
+    </script>
+  </body>
+</html>

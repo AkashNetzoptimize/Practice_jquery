@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+        /* Define your styles here */
+        #test1 {
+          background-color: lightblue;
+          padding: 10px;
+          margin-bottom: 20px;
+          border-radius: 5px;
+        }
+      
+        #test2 {
+          background-color: lightgreen;
+          padding: 10px;
+          margin-bottom: 20px;
+          border-radius: 5px;
+        }
+      </style>
+  </head>
+  <body>
+    <h1>jQuery Syntax</h1>
+
+    <div id="test1">
+      <h2>Test box 1</h2>
+    <P>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate,
+      reprehenderit vitae. Ducimus debitis tenetur obcaecati temporibus numquam
+      ab error perspiciatis necessitatibus quia, dicta, sit at culpa eaque!
+      Cumque, culpa ipsam.</P>
+    </div>
+    <div id="test2">
+      <h2>Test box 2</h2>
+    <P>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate,
+      reprehenderit vitae. Ducimus debitis tenetur obcaecati temporibus numquam
+      ab error perspiciatis necessitatibus quia, dicta, sit at culpa eaque!
+      Cumque, culpa ipsam.</P>
+    </div>
+
+
+
+
+    <script>
+$(document).ready(function(){
+
+var a = $("#test1").html();
+console.log(a);
+
+
+var b = $("#test1").html();
+console.log(a);
+
+});
+
+
+    </script>
+  </body>
+</html>

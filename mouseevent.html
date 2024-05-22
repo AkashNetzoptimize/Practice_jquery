@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouser Events</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      #box {
+        /* background: pink; */
+        padding: 10px;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mouse Events</h1>
+
+    <div id="box" class="test">
+      <h2>Test box</h2>
+      <P>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate,
+      reprehenderit vitae. Ducimus debitis tenetur obcaecati temporibus numquam
+      ab error perspiciatis necessitatibus quia, dicta, sit at culpa eaque!
+      Cumque, culpa ipsam.</P>
+    </div>
+
+    <!-- here i stated jquery code  -->
+    <script>
+      $(document).ready(function () {
+        $("#box").click(function () {
+          // var a = $("#box").html();
+          // console.log(a);
+          $("#box").css("background-color", "yellow");
+        });
+
+        //this is for double click 
+        $("#box").dblclick(function () {
+          $("#box").css("background-color", "greenyellow");
+        });
+
+        //this is for context menu
+        $("#box").contextmenu(function () {
+          $("#box").css("background-color", "orange");
+        });
+
+
+        //this is for mouse enter
+        $("#box").mouseenter(function () {
+          $("#box").css("background-color", "cyan");
+        });
+
+
+        //this is for mouse leave
+        $("#box").mouseleave(function () {
+          $("#box").css("background-color", "gray");
+        });
+
+
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery selectors</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+        /* Define your styles here */
+        #box {
+          background-color: lightblue;
+          padding: 10px;
+          margin-bottom: 20px;
+          border-radius: 5px;
+        }
+      
+      </style>
+</head>
+<body>
+ <h1>jQuery Selectors</h1>  
+
+ <div id="box" class="test">
+      <h2>Test box 1</h2>
+    <P> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate,
+      reprehenderit vitae. Ducimus debitis tenetur obcaecati temporibus numquam
+      ab error perspiciatis necessitatibus quia, dicta, sit at culpa eaque!
+      Cumque, culpa ipsam.</P>
+    </div>
+
+<ul id="list">
+<li>Orange</li>
+<li class="test" >Banana</li>
+<li>Grapes</li>
+<li class="test" >Apple</li>
+<li>Guava</li>
+</ul>
+
+
+
+
+<!-- here i stated jquery code  -->
+
+<script>
+$(document).ready(function(){
+// $("*").css("color","red");
+// $("ul li:eq(2)").css("color","red");
+//  $("li:first-child").css("color","red");
+// $("ul li:lt(3)").css("color","red");
+// $("ul li:gt(1)").css("color","red");
+ $(".test").css("color","red");
+
+});
+</script>
+
+
+
+</body>
+</html>
