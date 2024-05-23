@@ -67,8 +67,21 @@
 
         //this is for submit()
         $("#sform").submit(function () {
-      alser("Form Submited");
+      alert("Form Submited");
         });
+
+
+
+//to check all value 
+$('#sform').submit(function(){
+var name = $('#sname').val();
+var classname = $('#sclass').val();
+var country = $('#scountry').val();
+alert("Hello " + name + " class " + classname + " Country " + scountry  );
+})
+
+
+
       });
     </script>
   </body>

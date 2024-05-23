@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get method</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+  ></script>
+
+    <style>
+        #box{
+           background: pink;
+           padding: 10px;
+           border: 1px solid #000; 
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Get Methods</h1>
+    <div id="box" class="test abc">
+<h2>Test box</h2>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <span>Sit perferendis obcaecati ab in quibusdam itaque earum officiis quidem possimus repellat</span> deleniti eum dolores blanditiis voluptatibus, molestias eveniet dicta suscipit sunt tenetur facilis! Quis accusantium dolores recusandae corporis architecto, omnis necessitatibus enim consectetur esse aliquam ab ea ut nam explicabo deleniti. </p>
+
+    </div>
+
+
+    <script>
+$(document).ready(function(){
+
+//     //it print all html tags and text
+// var a = $("#box p").html();
+// console.log(a);
+
+
+// //only print text not prints tags
+// var b = $("#box").text();
+// console.log(b);
+
+
+//only print text not prints tags
+var b = $("#box").attr("class");
+console.log(b);
+
+//and forth is val() which i have use in form  formevent.html
+
+
+});
+
+    </script>
+</body>
+</html>
