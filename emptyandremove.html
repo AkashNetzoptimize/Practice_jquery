@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>After and before method</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      #box {
+        background: lightgreen;
+        border: 1px solid #000;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery After and Before methods</h1>
+
+    <div id="box">
+      <h2>Test box</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae,
+        dolorum!<span
+          >Lorem ipsum dolor sit amet consectetur adipisicing eli</span
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, quod!
+      </p>
+    </div>
+
+  
+    <br />
+    <button id="emptyBtn">Empty</button>
+    <button id="removeBtn">Remove</button>
+
+    <script>
+      $(document).ready(function () {
+
+    $("#emptyBtn").click(function(){
+        $("#box").empty();
+    })
+    $("#removeBtn").click(function(){
+        $("#box").remove();
+    })
+
+      });
+    </script>
+  </body>
+</html>

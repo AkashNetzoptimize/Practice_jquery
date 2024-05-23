@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set Methods</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      #box {
+        background: pink;
+        border: 1px solid #000;
+        padding: 20px;
+      }
+      .red{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery set methods</h1>
+
+    <div id="box" class="test">
+      <h2>Test box</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <span
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+          explicabo aspernatur ut consequatur sit omnis, itaque voluptatum quas
+          distinctio animi. Consectetur aspernatur molestias consequuntur
+          repudiandae tenetur ducimus autem sequi eum debitis? Eligendi, libero
+          rerum quia fugiat hic consequuntur, eius sapiente ad et,
+          exercitationem culpa porro illum quod fuga expedita pariatur!</span
+        >
+      </p>
+    </div>
+    <br />
+    <button id="clickbutton">Set value</button>
+
+    <script>
+      $(document).ready(function () {
+
+
+        $("#clickbutton").click(function () {
+          $("#box h2").text("Hello akash thakur");
+          $("#box p").html("paragragh <b>text </b> changed ");
+
+
+          //set class color red  
+          $("#box h2").attr("class" , "red");
+        });
+
+
+
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On and Off methods</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      #box {
+        border: 1px solid #000;
+        padding: 20px;
+      }
+      .boxbg {
+        background: cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery On and Off methods</h1>
+
+    <div id="box">
+      <h2>Test box</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae,
+        dolorum!
+        <span
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+          quam.</span
+        >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, quod!
+      </p>
+    </div>
+    <br />
+    <button id="removetask">Remove Event</button>
+
+    <script>
+      $(document).ready(function () {
+        // $("#box").on("click",function(){
+        // $(this).css("background","orange")
+        // });
+
+        // $("#box").on("mouseover mouseout",function(){
+        // $(this).toggleClass("boxbg");
+        // });
+
+        //this is on method
+        $("#box").on({
+          click: function () {
+            $(this).css("background", "orange");
+          },
+
+          mouseover: function () {
+            $(this).css("background", "cyan");
+          },
+
+          mouseout: function () {
+            $(this).css("background", "tan");
+          },
+        });
+
+        //this is off method
+        $("#removetask").click(function() {
+           $("#box").off("mouseover mouseout");
+        });
+      });
+    </script>
+  </body>
+</html>

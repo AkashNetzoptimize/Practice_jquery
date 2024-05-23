@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css class methods</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      #box {
+        border: 1px solid #000;
+        padding: 20px;
+      }
+
+      .first {
+        background: tan;
+      }
+
+      .second {
+        background: cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery Class Methods</h1>
+    <div id="box" class="test_box">
+      <h2>Test box</h2>
+      <p>
+        Lorem ipsum dolor sit amet.
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        Labore, quod blanditiis, consectetur repellendus quis ducimus maxime
+        molestias tempora porro iure autem, vitae voluptatem inventore
+        reprehenderit cum corrupti cupiditate velit ut.
+      </p>
+    </div>
+    <br />
+    <button id="addbutton">Add class</button>
+    <button id="removebutton">Remove class</button>
+    <button id="togglebutton">Toggle class</button>
+
+    <script>
+      $(document).ready(function () {
+        //this is for add class on the click of button
+        $("#addbutton").click(function () {
+          $("#box,h1").addClass("first second");
+        });
+
+        //this is for remove class on the click of button
+        $("#removebutton").click(function () {
+          $("#box").removeClass("second");
+        });
+
+        //this is for toggle class on the click of button 
+        $("#togglebutton").click(function () {
+          $("#box").toggleClass("second");
+        });
+
+      });
+    </script>
+  </body>
+</html>

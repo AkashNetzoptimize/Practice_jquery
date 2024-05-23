@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css Methods</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      #box {
+        border: 1px solid #000;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery css methods for inline css</h1>
+
+    <div id="box" class="test_box">
+      <h2>Test box</h2>
+      <p>
+        Lorem ipsum dolor sit amet.
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. </span>
+        Corrupti, cupiditate! Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Esse, nostrum. Officia reprehenderit incidunt accusamus in quo ad
+        nemo doloremque labore!
+      </p>
+    </div>
+    <br />
+    <button id="stylebutton">Add Style</button>
+
+    <script>
+      $(document).ready(function () {
+
+        $("#stylebutton").click(function () {
+          $("#box").css({"background":"cyan" , "color":"yellowgreen"});
+        });
+
+
+      });
+    </script>
+  </body>
+</html>
