@@ -154,45 +154,6 @@
 
 
 
-    <!-- <script>
-      $(document).ready(function () {
-        // Function to move slider to the next image
-        function nextSlide() {
-          var currentImg = $(".active");
-          var nextImg = currentImg.next();
-
-          if (nextImg.length) {
-            currentImg.removeClass("active").css("left", "-100%");
-            nextImg.addClass("active").css("left", "0");
-          } else {
-            $(".slider-inner img").removeClass("active").css("left", "100%");
-            $(".slider-inner img:first-child")
-              .addClass("active")
-              .css("left", "0");
-          }
-        }
-
-        $(".fa-arrow-right").on("click", function () {
-          nextSlide();
-        });
-
-        var autoSlide = setInterval(nextSlide, 3000);
-
-        // Pausing the auto slide on hover
-        $(".slider-outer").hover(
-          function () {
-            clearInterval(autoSlide);
-          },
-          function () {
-            autoSlide = setInterval(nextSlide, 3000);
-          }
-        );
-      });
-    </script> -->
-
-
-
-
     <script>
       $(document).ready(function () {
         // Function to move slider to the next image
