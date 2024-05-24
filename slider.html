@@ -79,9 +79,8 @@
         <i class="fa-solid fa-arrow-left"></i>
         <div class="slider-inner">
           <img src="/images/image1.jpg" class="active" />
-          <img src="/images/image3.jpg" />
           <img src="/images/image2.jpg" />
-       
+          <img src="/images/image4.jpg" />
         </div>
         <div class="slider-dots">
           <span class="dot"></span>
@@ -217,7 +216,7 @@
     
           if (prevImg.length) {
             currentImg.removeClass('active').css('left', '100%');
-            prevImg.addClass('active').css('left', '1');
+            prevImg.addClass('active').css('left', '0');
           } else {
             $('.slider-inner img').removeClass('active').css('left', '-100%');
             $('.slider-inner img:last-child').addClass('active').css('left', '0');
@@ -230,7 +229,7 @@
           nextSlide();
         });
     
-        //thisis for left button 
+        //this is for left button 
         $(".fa-arrow-left").on("click", function () {
           prevSlide();
         });
