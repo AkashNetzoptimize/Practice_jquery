@@ -1,91 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Slider</title>
-  <script src="https://kit.fontawesome.com/bfc8363285.js"></script>
-  <script
-    src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-    crossorigin="anonymous"
-  ></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <script src="https://kit.fontawesome.com/bfc8363285.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
 
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      color: #fff;
-      background: #333;
-    }
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
-    h1 {
-      text-align: center;
-    }
-    img {
-      width: 50%;
-    }
-    .container {
-      width: 540px; 
-      margin: 40px auto;
-      overflow: auto;
-    }
-    .slider-inner {
-      width: 500px;
-      height: auto;
-      position: relative;
-      overflow: hidden;
-      float: left;
-      padding: 3px;
-      border: #666 solid 1px;
-    }
-    .slider-inner img {
-      display: none;
-      width: 500px;
-      height: auto;
-    }
-    .slider-inner img.active {
-      display: inline-block;
-    }
-    .fa-arrow-left,
-    .fa-arrow-right {
-      float: left;
-      margin-top: 130px;
-      cursor: pointer;
-    }
-    .fa-arrow-left {
-      position: relative;
-      margin-right: -120px;
-      z-index: 100;
-    }
-    .fa-arrow-right {
-      position: relative;
-      margin-left: -45px;
-      z-index: 100;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>jQuery slider</h1>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #fff;
+        background: #333;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      h1 {
+        text-align: center;
+      }
 
-    <div class="slider-outer">
-      <i class="fa-solid fa-arrow-left"></i>
-      <div class="slider-inner">
-        <img src="/images/image1.jpg" class="active" />
-        <img src="/images/image2.jpg" />
-        <img src="/images/image3.jpg" />
-        <img src="/images/image4.jpg" />
+      .container {
+        width: 90%;
+        margin: 50px auto;
+        overflow: auto;
+      }
+      .slider-inner {
+        width: 100%;
+        height: 700px;
+        position: relative;
+        overflow: hidden;
+        float: left;
+        padding: 3px;
+        border: #666 solid 1px;
+      }
+      .slider-inner img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        height: auto;
+        transition: left 0.5s ease;
+      }
+      .slider-inner img.active {
+        display: inline-block;
+      }
+      .fa-arrow-left,
+      .fa-arrow-right {
+        float: left;
+        margin-top: 250px;
+        cursor: pointer;
+        padding: 18px;
+        color: red;
+        font-size: 30px;
+      }
+      .fa-arrow-left {
+        position: relative;
+        margin-right: -120px;
+        z-index: 100;
+      }
+      .fa-arrow-right {
+        position: relative;
+        margin-left: -70px;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>jQuery slider</h1>
+
+      <div class="slider-outer">
+        <i class="fa-solid fa-arrow-left"></i>
+        <div class="slider-inner">
+          <img src="/images/image1.jpg" class="active" />
+          <img src="/images/image2.jpg" />
+          <img src="/images/image3.jpg" />
+          <img src="/images/image4.jpg" />
+        </div>
+        <div class="slider-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <i class="fa-solid fa-arrow-right"></i>
       </div>
-      <i class="fa-solid fa-arrow-right"></i>
     </div>
-  </div>
 
-  <!-- jquery starts from here -->
-  <script>
+    <!-- jquery starts from here -->
+    <!-- <script>
     $(document).ready(function () {
       $(".fa-arrow-left").on("click", function () {
         var currentimg = $('.active');
@@ -107,7 +116,134 @@
         }
       });
     });
-  </script>
-  <!-- jquery ends here -->
-</body>
+  </script> -->
+
+
+
+
+    <!-- 
+  <script>
+    $(document).ready(function () {
+      // Function to move slider to the next image
+      function nextSlide() {
+        var currentimg = $('.active');
+        var nextimg = currentimg.next();
+
+        if (nextimg.length) {
+          currentimg.removeClass('active').css('z-index', '-10');
+          nextimg.addClass('active').css('z-index', '10');
+        } else {
+          $('.slider-inner img').removeClass('active').css('z-index', '-10');
+          $('.slider-inner img:first-child').addClass('active').css('z-index', '10');
+        }
+      }
+
+      $(".fa-arrow-right").on("click", function () {
+        nextSlide();
+      });
+      var autoSlide = setInterval(nextSlide,3000);
+
+      // Pausing the auto slide on hover
+      $(".slider-outer").hover(function(){
+        clearInterval(autoSlide);
+      }, function(){
+        autoSlide = setInterval(nextSlide, 3000);
+      });
+    });
+  </script> -->
+
+
+
+
+    <!-- <script>
+      $(document).ready(function () {
+        // Function to move slider to the next image
+        function nextSlide() {
+          var currentImg = $(".active");
+          var nextImg = currentImg.next();
+
+          if (nextImg.length) {
+            currentImg.removeClass("active").css("left", "-100%");
+            nextImg.addClass("active").css("left", "0");
+          } else {
+            $(".slider-inner img").removeClass("active").css("left", "100%");
+            $(".slider-inner img:first-child")
+              .addClass("active")
+              .css("left", "0");
+          }
+        }
+
+        $(".fa-arrow-right").on("click", function () {
+          nextSlide();
+        });
+
+        var autoSlide = setInterval(nextSlide, 3000);
+
+        // Pausing the auto slide on hover
+        $(".slider-outer").hover(
+          function () {
+            clearInterval(autoSlide);
+          },
+          function () {
+            autoSlide = setInterval(nextSlide, 3000);
+          }
+        );
+      });
+    </script> -->
+
+
+
+
+    <script>
+      $(document).ready(function () {
+        // Function to move slider to the next image
+        function nextSlide() {
+          var currentImg = $('.active');
+          var nextImg = currentImg.next();
+    
+          if (nextImg.length) {
+            currentImg.removeClass('active').css('left', '-100%');
+            nextImg.addClass('active').css('left', '0');
+          } else {
+            $('.slider-inner img').removeClass('active').css('left', '100%');
+            $('.slider-inner img:first-child').addClass('active').css('left', '0');
+          }
+        }
+    
+        // Function to move slider to the previous image
+        function prevSlide() {
+          var currentImg = $('.active');
+          var prevImg = currentImg.prev();
+    
+          if (prevImg.length) {
+            currentImg.removeClass('active').css('left', '100%');
+            prevImg.addClass('active').css('left', '0');
+          } else {
+            $('.slider-inner img').removeClass('active').css('left', '-100%');
+            $('.slider-inner img:last-child').addClass('active').css('left', '0');
+          }
+        }
+    
+        $(".fa-arrow-right").on("click", function () {
+          nextSlide();
+        });
+    
+        $(".fa-arrow-left").on("click", function () {
+          prevSlide();
+        });
+    
+        var autoSlide = setInterval(nextSlide, 3000);
+    
+       //this is use to pause the slider on hover on the screen 
+        $(".slider-outer").hover(function(){
+          clearInterval(autoSlide);
+        }, function(){
+          autoSlide = setInterval(nextSlide, 3000);
+        });
+      });
+    </script>
+    
+
+    <!-- jquery ends here -->
+  </body>
 </html>
