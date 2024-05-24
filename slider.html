@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slider</title>
+  <script src="https://kit.fontawesome.com/bfc8363285.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+  ></script>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: #fff;
+      background: #333;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    h1 {
+      text-align: center;
+    }
+    img {
+      width: 50%;
+    }
+    .container {
+      width: 540px; 
+      margin: 40px auto;
+      overflow: auto;
+    }
+    .slider-inner {
+      width: 500px;
+      height: auto;
+      position: relative;
+      overflow: hidden;
+      float: left;
+      padding: 3px;
+      border: #666 solid 1px;
+    }
+    .slider-inner img {
+      display: none;
+      width: 500px;
+      height: auto;
+    }
+    .slider-inner img.active {
+      display: inline-block;
+    }
+    .fa-arrow-left,
+    .fa-arrow-right {
+      float: left;
+      margin-top: 130px;
+      cursor: pointer;
+    }
+    .fa-arrow-left {
+      position: relative;
+      margin-right: -120px;
+      z-index: 100;
+    }
+    .fa-arrow-right {
+      position: relative;
+      margin-left: -45px;
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>jQuery slider</h1>
+
+    <div class="slider-outer">
+      <i class="fa-solid fa-arrow-left"></i>
+      <div class="slider-inner">
+        <img src="/images/image1.jpg" class="active" />
+        <img src="/images/image2.jpg" />
+        <img src="/images/image3.jpg" />
+        <img src="/images/image4.jpg" />
+      </div>
+      <i class="fa-solid fa-arrow-right"></i>
+    </div>
+  </div>
+
+  <!-- jquery starts from here -->
+  <script>
+    $(document).ready(function () {
+      $(".fa-arrow-left").on("click", function () {
+        var currentimg = $('.active');
+        var previmg = currentimg.prev();
+
+        if (previmg.length) {
+          currentimg.removeClass('active').css('z-index', '-10');
+          previmg.addClass('active').css('z-index', '10');
+        }
+      });
+
+      $(".fa-arrow-right").on("click", function () {
+        var currentimg = $('.active');
+        var nextimg = currentimg.next();
+
+        if (nextimg.length) {
+          currentimg.removeClass('active').css('z-index', '-10');
+          nextimg.addClass('active').css('z-index', '10');
+        }
+      });
+    });
+  </script>
+  <!-- jquery ends here -->
+</body>
+</html>

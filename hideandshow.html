@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hide and show</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      #box {
+        background: lightgreen;
+        border: 1px solid #000;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery Hide and show</h1>
+
+    <div id="box">
+      <h2>Test box</h2>
+      <p>
+        Lorem ipsum dolor sit. <span>Lorem, ipsum dolor.</span> Lorem ipsum
+        dolor sit amet.
+      </p>
+    </div>
+    <br />
+
+    <button id="hideBtn">Hide</button>
+    <button id="showBtn">Show</button>
+    <button id="ToggleBtn">Toggle</button>
+
+    <script>
+      $(document).ready(function () {
+        
+        $("#hideBtn").click(function () {
+          $("#box").hide(3000,function(){
+            console.log("Now it is hidden")
+          });
+        });
+
+        $("#showBtn").click(function () {
+          $("#box").show(1000,function(){
+            console.log("Now it is show")
+          });
+        });
+
+        $("#ToggleBtn").click(function () {
+          $("#box").toggle();
+        });
+
+      
+      });
+    </script>
+  </body>
+</html>

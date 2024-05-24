@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animate Methods and stop</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      #box {
+        background: lightgreen;
+        border: 1px solid #000;
+        padding: 20px;
+        width: 200px;
+        height: 200px;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery Animate Methods and stop</h1>
+
+    <div id="box">Test box</div>
+
+    <br />
+
+    <button id="animateBtn">Animate</button>
+    <button id="stopBtn">Stop</button>
+
+    <!-- script start form here -->
+    <script>
+      $(document).ready(function () {
+
+
+        $("#animateBtn").click(function () {
+          $("#box").animate({ left: "200px", width: "500px" }, 3000);
+        });
+
+        $('#stopBtn').click(function(){
+            $('#box').stop();
+        });
+
+      });
+    </script>
+    <!-- script ends here  -->
+  </body>
+</html>

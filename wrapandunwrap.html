@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wrap and unwrap</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      #box {
+        background: tan;
+        border: 2px solid #000;
+        padding: 20px;
+      }
+      .test{
+        background-color: cyan;
+        border: 2px solid yellow;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery Wrap() and Unwrap()</h1>
+    <div id="box" class="test_box">
+      <h2>Test box</h2>
+      <p>
+        Lorem ipsum dolor sit amet.
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+        Labore, quod blanditiis, consectetur repellendus quis ducimus maxime
+        molestias tempora porro iure autem, vitae voluptatem inventore
+        reprehenderit cum corrupti cupiditate velit ut.
+      </p>
+    </div>
+    <br />
+    <button id="wrapBtn">Warp</button>
+    <button id="unwrapBtn">Unwrap</button>
+ 
+
+    <script>
+      $(document).ready(function () {
+        
+        $("#wrapBtn").click(function () {
+         $("#box p").wrap("<div class='test'></div>");
+        });
+
+        $("#unwrapBtn").click(function () {
+            $("#box p").unwrap("");
+
+        });
+
+        
+
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fade and fadeout </title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      #box {
+        background: lightgreen;
+        border: 1px solid #000;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery fadeIn & fadeOut Method </h1>
+
+    <div id="box">
+      <h2>Test box</h2>
+      <p>
+        Lorem ipsum dolor sit. <span>Lorem, ipsum dolor.</span> Lorem ipsum
+        dolor sit amet.
+      </p>
+    </div>
+    <br />
+
+    <button id="fadeOut">FadeOut</button>
+    <button id="fadeIn">FadeIn</button>
+    <button id="fadeToggle">FadeToggle</button>
+    <button id="fadeTo">FadeTo</button>
+
+    <script>
+      $(document).ready(function () {
+        
+        $("#fadeIn").click(function () {
+          $("#box").fadeIn(3000);
+        });
+
+        $("#fadeOut").click(function () {
+          $("#box").fadeOut(3000);
+        });
+
+        $("#fadeToggle").click(function () {
+          $("#box").fadeToggle(3000);
+        });
+
+        $("#fadeTo").click(function () {
+          $("#box").fadeTo(2000,0.3,function(){
+            console.log("Now it is fading")
+          });
+        });
+
+      
+      });
+    </script>
+  </body>
+</html>
