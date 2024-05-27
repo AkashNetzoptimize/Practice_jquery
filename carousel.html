@@ -23,10 +23,11 @@
   }
 
   .container {
-    width: 90%;
-    margin: 50px auto;
-    height: 600px;
-  }
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+}
+ 
   .slider-outer {
     width: 90%;
     position: relative;
@@ -125,46 +126,50 @@
 </div>
 
 <script>
-  $(document).ready(function () {
-    var slides = $('.slider-inner img');
-    var dots = $('.dot');
-    var currentSlide = 0;
-
-    function showSlide(index) {
-  slides.removeClass('active').css('left', '100%'); 
-  slides.eq(index).addClass('active').css('left', 0); 
-  dots.removeClass('active');
-  dots.eq(index).addClass('active');
-  currentSlide = index;
-}
 
 
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
+$(document).ready(function () {
+  var slides = $('.slider-inner img');
+  var dots = $('.dot');
+  var currentSlide = 0;
 
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
+  function showSlide(index) {
+    slides.removeClass('active').css('left', '100%');
+    slides.eq(index).addClass('active').css('left', 0);
+    slides.eq(index - 1).addClass('active').css('left', 0); 
+    dots.removeClass('active');
+    dots.eq(index).addClass('active');
+    currentSlide = index;
+  }
 
-    $(".fa-arrow-right").on("click", nextSlide);
-    $(".fa-arrow-left").on("click", prevSlide);
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
 
-    dots.click(function () {
-      var index = $(this).index();
-      showSlide(index);
-    });
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
 
-    var autoSlide = setInterval(nextSlide, 3000);
+  $(".fa-arrow-right").on("click", nextSlide);
+  $(".fa-arrow-left").on("click", prevSlide);
 
-    $(".slider-outer").hover(function(){
-      clearInterval(autoSlide);
-    }, function(){
-      autoSlide = setInterval(nextSlide, 3000);
-    });
+  dots.click(function () {
+    var index = $(this).index();
+    showSlide(index);
   });
+
+  var autoSlide = setInterval(nextSlide, 3000);
+
+  $(".slider-outer").hover(function () {
+    clearInterval(autoSlide);
+  }, function () {
+    autoSlide = setInterval(nextSlide, 3000);
+  });
+});
+
 </script>
 </body>
 </html>
+
