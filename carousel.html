@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Slider</title>
+<script src="https://kit.fontawesome.com/bfc8363285.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #fff;
+    background: #333;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  h1 {
+    text-align: center;
+  }
+
+  .container {
+    width: 90%;
+    margin: 50px auto;
+    height: 600px;
+  }
+  .slider-outer {
+    width: 90%;
+    position: relative;
+    
+  }
+  .slider-inner {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border: #666 solid 1px;
+    height:800px;
+  }
+  .slider-inner img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+  transition: left 0.8s ease; 
+}
+
+.slider-inner img.active {
+  opacity: 1;
+  left: 0; 
+}
+  .slider-inner img.active {
+    opacity: 1;
+  }
+  .fa-arrow-left,
+  .fa-arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: red;
+    font-size: 30px;
+    z-index: 1;
+  }
+  .fa-arrow-left {
+    left: 10px;
+  }
+  .fa-arrow-right {
+    right: 10px;
+  }
+  .slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 0 5px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  
+  }
+  .dot.active {
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Custom Slider</h1>
+
+  <div class="slider-outer">
+    <i class="fa-solid fa-arrow-left"></i>
+    <div class="slider-inner">
+      <img src="/images/image1.jpg" class="active" />
+      <img src="/images/image2.jpg" />
+      <img src="/images/image3.jpg" />
+      <img src="/images/image4.jpg" />
+      <img src="/images/image5.jpg" />
+      <img src="/images/image6.jpg" />
+      <img src="/images/image7.jpg" />
+    </div>
+    <i class="fa-solid fa-arrow-right"></i>
+    <div class="slider-dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    var slides = $('.slider-inner img');
+    var dots = $('.dot');
+    var currentSlide = 0;
+
+    function showSlide(index) {
+  slides.removeClass('active').css('left', '100%'); 
+  slides.eq(index).addClass('active').css('left', 0); 
+  dots.removeClass('active');
+  dots.eq(index).addClass('active');
+  currentSlide = index;
+}
+
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    $(".fa-arrow-right").on("click", nextSlide);
+    $(".fa-arrow-left").on("click", prevSlide);
+
+    dots.click(function () {
+      var index = $(this).index();
+      showSlide(index);
+    });
+
+    var autoSlide = setInterval(nextSlide, 3000);
+
+    $(".slider-outer").hover(function(){
+      clearInterval(autoSlide);
+    }, function(){
+      autoSlide = setInterval(nextSlide, 3000);
+    });
+  });
+</script>
+</body>
+</html>
