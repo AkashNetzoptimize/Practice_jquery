@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <script src="https://kit.fontawesome.com/bfc8363285.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #fff;
+        background: #333;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      h1 {
+        text-align: center;
+      }
+      .container {
+        width: 90%;
+        margin: 50px auto;
+      }
+      .owl-carousel {
+        display: none;
+      }
+      .owl-carousel img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      i.fas.fa-chevron-right {
+    position: absolute;
+    top: 40%;
+    right: 50px;
+}
+i.fas.fa-chevron-left {
+    position: absolute;
+    top: 40%;
+    left: 50px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>jQuery slider</h1>
+      <div class="owl-carousel owl-theme">
+        <div><img src="/images/image1.jpg" /></div>
+        <div><img src="/images/image2.jpg" /></div>
+        <div><img src="/images/image3.jpg" /></div>
+        <div><img src="/images/image4.jpg" /></div>
+        <div><img src="/images/image5.jpg" /></div>
+        <div><img src="/images/image6.jpg" /></div>
+        <div><img src="/images/image7.jpg" /></div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+          items: 1,
+          loop: true,
+          autoplay: true,
+          autoplayHoverPause: true,
+          nav: true,
+          navText: [
+            '<i class="fas fa-chevron-left"></i>',
+            '<i class="fas fa-chevron-right"></i>',
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
