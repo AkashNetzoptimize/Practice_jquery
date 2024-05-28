@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtering Methods</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- style  starts form here  -->
+    <style>
+      #first {
+        border: 1px solid black;
+        padding: 20px;
+        background: rgb(214, 179, 114);
+      }
+
+      #second {
+        border: 1px solid black;
+        padding: 20px;
+        background: rgb(157, 223, 203);
+      }
+    </style>
+    <!-- style end here  -->
+  </head>
+  <body>
+    <h1>jQuery Filtering Methods</h1>
+
+    <div id="first">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, enim!
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum,
+        corrupti!
+      </p>
+    </div>
+
+    <ul>
+      <li>Orange</li>
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Grapes</li>
+    </ul>
+
+    <div id="second">
+      <p class="test">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
+        rerum?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,
+        nihil?
+      </p>
+    </div>
+
+    <!-- jquery starts form here  -->
+
+    <script>
+      $(document).ready(function () {
+
+
+        // $('ul li').first().css('background','cyan');
+        // $('ul li').last().css('background','gold');
+
+        //  $('ul li').eq(2).css('background','orange');
+
+        //  $('p').filter('.test').css('background','orange');
+
+        $("p").not(".test").css("background", "orange");
+
+        $('ul li').slice(1,3).css('background','gold')
+      });
+    </script>
+
+    <!-- jquery end here  -->
+  </body>
+</html>

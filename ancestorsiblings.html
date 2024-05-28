@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ancestor method</title>
+    <title>Ancestor method and siblings</title>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -16,25 +16,40 @@
         border: 1px solid #000;
         padding: 20px;
         width: 60%;
+        background: plum;
       }
 
       #outer {
         border: 1px solid #000;
         padding: 20px;
+        background: burlywood;
       }
       #inner {
         border: 1px solid #000;
         padding: 20px;
+        background: palevioletred;
       }
       #inner div {
         border: 1px solid #000;
         padding: 20px;
       }
+      .flex-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .flex-container div {
+        background: cyan;
+        height: 100px;
+        align-items: center;
+        display: flex;
+      }
     </style>
     <!-- style end here  -->
   </head>
   <body>
-    <h1>jQuery Ancestor Methods</h1>
+    <h1>jQuery Ancestor Methods and siblings</h1>
 
     <div id="main-outer">
       <h2>Main Outer</h2>
@@ -44,10 +59,13 @@
 
         <div id="inner">
           <h2 id="child-head">Inner</h2>
-          <div>A</div>
-          <div>B</div>
-          <div id="child-C">C</div>
-          <div>D</div>
+          <div class="flex-container">
+            <div>A</div>
+            <div>B</div>
+            <div id="child-C">C</div>
+            <div>D</div>
+            <div>E</div>
+          </div>
         </div>
       </div>
     </div>
@@ -55,7 +73,9 @@
     <!-- jquery starts form here  -->
 
     <script>
-      $(document).ready(function () {});
+      $(document).ready(function () {
+        $("#child-C").siblings().css("background", "red");
+      });
     </script>
 
     <!-- jquery end here  -->

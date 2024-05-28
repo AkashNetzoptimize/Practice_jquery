@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>has() and Is() Methods</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- style  starts form here  -->
+    <style>
+      #first {
+        border: 1px solid black;
+        padding: 20px;
+        background: rgb(214, 179, 114);
+      }
+    </style>
+    <!-- style end here  -->
+  </head>
+  <body>
+    <h1>jQuery has() and Is() Methods</h1>
+
+    <div id="first">
+      <p>
+        Lorem ipsum dolor sit
+        <b> amet consectetur, adipisicing elit.</b> Quaerat, enim!
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum,
+        corrupti!
+      </p>
+    </div>
+
+    <ul>
+      <li>Orange</li>
+      <li><span>Apple</span></li>
+      <li>Banana</li>
+      <li>Grapes</li>
+    </ul>
+
+
+      <p class="test">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
+        rerum?
+      </p>
+      <p>
+        Lorem ipsum dolor sit
+        <span class="test"> amet consectetur adipisicing elit.</span>
+        Dignissimos, nihil?
+      </p>
+
+
+    <!-- jquery starts form here  -->
+    <script>
+      $(document).ready(function () {
+        // $('p').has('b,span').css('background','red')
+
+        $("p").click(function () {
+          if ($(this).parent().is("div")) {
+            $(this).css('background','orange');
+          }
+        });
+      });
+    </script>
+    <!-- jquery end here  -->
+  </body>
+</html>
